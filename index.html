@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Doces Saudáveis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#2F6853", // Dark green from background
+                light: "#3C7D65", // Slightly lighter green
+                dark: "#235442", // Darker green for hover states
+              },
+              secondary: "#F4B860", // Gold color from the text
+              dark: "#1a1a1a",
+              light: "#ffffff",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-primary-light">
+    <!-- Hero Section with Picture and Form -->
+    <section class="bg-primary text-light py-20">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-1/2">
+            <h1 class="text-4xl font-bold mb-4 text-secondary">
+              Doces Saudáveis
+            </h1>
+            <p class="text-gray-300 mb-8">
+              Participe da nossa aula exclusiva e aprenda a fazer doces
+              deliciosos sem açúcar e sem glúten.
+            </p>
+            <form class="space-y-4">
+              <input
+                type="text"
+                placeholder="Seu Nome"
+                class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+              />
+              <input
+                type="email"
+                placeholder="Seu Email"
+                class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+              />
+              <input
+                type="tel"
+                placeholder="Seu WhatsApp"
+                class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+              />
+              <button
+                type="submit"
+                class="w-full bg-secondary hover:bg-secondary/90 text-primary-dark font-bold py-3 px-6 rounded-lg transition-colors"
+              >
+                Reservar Minha Vaga
+              </button>
+            </form>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img
+              src="cake.JPG"
+              alt="Bolo saudável"
+              class="rounded-lg w-full h-[500px] object-cover shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Class Section -->
+    <section class="py-20 bg-light">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">
+          O Que Você Vai Aprender
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-primary/5 p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-primary text-center">
+              <span class="text-4xl block mb-3">🍯</span>
+              Adoçantes Naturais
+            </h3>
+            <p class="text-gray-600">
+              Descubra alternativas saudáveis ao açúcar refinado e aprenda como
+              usá-las efetivamente em seus doces.
+            </p>
+          </div>
+          <div
+            class="bg-primary/5 p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-primary text-center">
+              <span class="text-4xl block mb-3">🌾</span>
+              Técnicas Sem Glúten
+            </h3>
+            <p class="text-gray-600">
+              Domine a arte da confeitaria sem glúten com nossas misturas de
+              farinhas e técnicas especialmente desenvolvidas.
+            </p>
+          </div>
+          <div
+            class="bg-primary/5 p-6 rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          >
+            <h3 class="text-xl font-bold mb-4 text-primary text-center">
+              <span class="text-4xl block mb-3">✨</span>
+              Texturas Perfeitas
+            </h3>
+            <p class="text-gray-600">
+              Aprenda a alcançar a textura perfeita em seus doces sem usar
+              ingredientes tradicionais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Chef Section -->
+    <section class="py-20 bg-primary">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-full md:w-1/3">
+            <img
+              src="https://brunahash.com/wp-content/uploads/2024/08/arquiteta-e-agora-virei-empresaria-1-2.png"
+              alt="Bruna Hash"
+              class="rounded-lg w-full max-w-md mx-auto shadow-xl"
+            />
+          </div>
+          <div class="w-full md:w-2/3">
+            <h2 class="text-4xl font-bold mb-8 text-secondary">
+              Quem é a Bruna?
+            </h2>
+            <div class="space-y-6 text-light/90 text-lg">
+              <p>
+                Bru Hash é apaixonada por doces e por cuidar da sua saúde.
+                Pensando em unir as duas paixões, abriu uma empresa de doces
+                saudáveis na Alemanha: a Anis.
+              </p>
+              <p>
+                Porém, ela e seu marido mudaram-se para a Espanha e foi preciso
+                fechar a Anis. Suas clientes sentiram falta dos doces saudáveis,
+                o que a motivou a compartilhar todo o seu conhecimento, dando
+                origem ao Santo Doce.
+              </p>
+              <p>
+                Hoje Bruna tem mais de 400 alunas em 18 países, e ensina suas
+                receitas de doces saudáveis que fizeram tanto sucesso na
+                Alemanha.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
