@@ -23,6 +23,38 @@
         },
       };
     </script>
+    <script>
+      async function submitToActiveCampaign(formData) {
+        try {
+          const response = await fetch(
+            "https://youraccount.api-us1.com/api/3/contacts",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Api-Token": "YOUR_API_KEY", // Replace with your ActiveCampaign API key
+              },
+              body: JSON.stringify({
+                contact: {
+                  email: formData.email,
+                  firstName: formData.firstName,
+                  phone: formData.phone,
+                  listid: "YOUR_LIST_ID", // Replace with your ActiveCampaign list ID
+                },
+              }),
+            }
+          );
+
+          if (response.ok) {
+            window.location.href = "/thanks.html";
+          } else {
+            throw new Error("Erro ao enviar o formulário");
+          }
+        } catch (error) {
+          alert(error.message);
+        }
+      }
+    </script>
   </head>
   <body class="bg-primary-light">
     <!-- Hero Section with Picture and Form -->
@@ -37,25 +69,40 @@
               Participe da nossa aula exclusiva e aprenda a fazer doces
               deliciosos sem açúcar e sem glúten.
             </p>
-            <form class="space-y-4">
+            <form
+              id="acForm"
+              class="space-y-4"
+              onsubmit="event.preventDefault()"
+            >
               <input
                 type="text"
+                id="name"
                 placeholder="Seu Nome"
                 class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+                required
               />
               <input
                 type="email"
+                id="email"
                 placeholder="Seu Email"
                 class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+                required
               />
               <input
                 type="tel"
+                id="phone"
                 placeholder="Seu WhatsApp"
                 class="w-full p-3 rounded-lg bg-primary-dark/50 border border-primary-light focus:outline-none focus:border-secondary"
+                required
               />
               <button
                 type="submit"
                 class="w-full bg-secondary hover:bg-secondary/90 text-primary-dark font-bold py-3 px-6 rounded-lg transition-colors"
+                onclick="submitToActiveCampaign({
+                  email: document.getElementById('email').value,
+                  firstName: document.getElementById('name').value,
+                  phone: document.getElementById('phone').value
+                })"
               >
                 Reservar Minha Vaga
               </button>
@@ -125,7 +172,7 @@
         <div class="flex flex-col md:flex-row items-center gap-12">
           <div class="w-full md:w-1/3">
             <img
-              src="https://brunahash.com/wp-content/uploads/2024/08/arquiteta-e-agora-virei-empresaria-1-2.png"
+              src="bruhash.png"
               alt="Bruna Hash"
               class="rounded-lg w-full max-w-md mx-auto shadow-xl"
             />
