@@ -22,11 +22,6 @@ export default async function handler(req, res) {
                     firstName,
                     phone,
                     listid: ACTIVE_CAMPAIGN_LIST_ID,
-                    utm_campaign,
-                    utm_medium,
-                    utm_source,
-                    utm_content,
-                    utm_term,
                 }
             })
         });
