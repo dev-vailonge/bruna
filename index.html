@@ -45,50 +45,47 @@
             e.preventDefault();
 
             const formData = {
-              contact: {
-                email: document.getElementById("email").value,
-                firstName: document.getElementById("name").value,
-                phone: document.getElementById("phone").value,
-                listid: "Leads",
-                fieldValues: [
-                  {
-                    field: "utm_campaign",
-                    value:
-                      document.querySelector('input[name="field[23]"]')
-                        ?.value || "",
-                  },
-                  {
-                    field: "utm_medium",
-                    value:
-                      document.querySelector('input[name="field[25]"]')
-                        ?.value || "",
-                  },
-                  {
-                    field: "utm_source",
-                    value:
-                      document.querySelector('input[name="field[24]"]')
-                        ?.value || "",
-                  },
-                  {
-                    field: "utm_content",
-                    value:
-                      document.querySelector('input[name="field[26]"]')
-                        ?.value || "",
-                  },
-                  {
-                    field: "utm_term",
-                    value:
-                      document.querySelector('input[name="field[27]"]')
-                        ?.value || "",
-                  },
-                  {
-                    field: "paginaCaptura",
-                    value:
-                      document.querySelector('input[name="field[29]"]')
-                        ?.value || "",
-                  },
-                ],
-              },
+              email: document.getElementById("email").value,
+              firstName: document.getElementById("name").value,
+              phone: document.getElementById("phone").value,
+              fieldValues: [
+                {
+                  field: "utm_campaign",
+                  value:
+                    document.querySelector('input[name="field[23]"]')?.value ||
+                    "",
+                },
+                {
+                  field: "utm_medium",
+                  value:
+                    document.querySelector('input[name="field[25]"]')?.value ||
+                    "",
+                },
+                {
+                  field: "utm_source",
+                  value:
+                    document.querySelector('input[name="field[24]"]')?.value ||
+                    "",
+                },
+                {
+                  field: "utm_content",
+                  value:
+                    document.querySelector('input[name="field[26]"]')?.value ||
+                    "",
+                },
+                {
+                  field: "utm_term",
+                  value:
+                    document.querySelector('input[name="field[27]"]')?.value ||
+                    "",
+                },
+                {
+                  field: "paginaCaptura",
+                  value:
+                    document.querySelector('input[name="field[29]"]')?.value ||
+                    "",
+                },
+              ],
             };
 
             console.log("🔥 Data being sent to backend:", formData); // 🔥 Debugging log
