@@ -45,47 +45,27 @@
             e.preventDefault();
 
             const formData = {
-              email: document.getElementById("email").value,
-              firstName: document.getElementById("name").value,
-              phone: document.getElementById("phone").value,
-              fieldValues: [
-                {
-                  field: "utm_campaign",
-                  value:
-                    document.querySelector('input[name="field[23]"]')?.value ||
-                    "",
-                },
-                {
-                  field: "utm_medium",
-                  value:
-                    document.querySelector('input[name="field[25]"]')?.value ||
-                    "",
-                },
-                {
-                  field: "utm_source",
-                  value:
-                    document.querySelector('input[name="field[24]"]')?.value ||
-                    "",
-                },
-                {
-                  field: "utm_content",
-                  value:
-                    document.querySelector('input[name="field[26]"]')?.value ||
-                    "",
-                },
-                {
-                  field: "utm_term",
-                  value:
-                    document.querySelector('input[name="field[27]"]')?.value ||
-                    "",
-                },
-                {
-                  field: "paginaCaptura",
-                  value:
-                    document.querySelector('input[name="field[29]"]')?.value ||
-                    "",
-                },
-              ],
+              contact: {
+                email: document.getElementById("email").value,
+                firstName: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                listid: "Leads",
+                utm_campaign:
+                  document.querySelector('input[name="field[23]"]')?.value ||
+                  "",
+                utm_medium:
+                  document.querySelector('input[name="field[25]"]')?.value ||
+                  "",
+                utm_source:
+                  document.querySelector('input[name="field[24]"]')?.value ||
+                  "",
+                utm_content:
+                  document.querySelector('input[name="field[26]"]')?.value ||
+                  "",
+                utm_term:
+                  document.querySelector('input[name="field[27]"]')?.value ||
+                  "",
+              },
             };
 
             console.log("🔥 Data being sent to backend:", formData); // 🔥 Debugging log
