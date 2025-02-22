@@ -45,15 +45,50 @@
             e.preventDefault();
 
             const formData = {
-              email: document.getElementById("email").value,
-              firstName: document.getElementById("name").value,
-              phone: document.getElementById("phone").value,
-              utm_campaign: document.getElementById("utm_campaign").value,
-              utm_medium: document.getElementById("utm_medium").value,
-              utm_source: document.getElementById("utm_source").value,
-              utm_content: document.getElementById("utm_content").value,
-              utm_term: document.getElementById("utm_term").value,
-              paginaCaptura: document.getElementById("paginaCaptura").value,
+              contact: {
+                email: document.getElementById("email").value,
+                firstName: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                listid: "YOUR_LIST_ID", // Replace with your actual list ID
+                fieldValues: [
+                  {
+                    field: "utm_campaign",
+                    value:
+                      document.querySelector('input[name="field[23]"]')
+                        ?.value || "",
+                  },
+                  {
+                    field: "utm_medium",
+                    value:
+                      document.querySelector('input[name="field[25]"]')
+                        ?.value || "",
+                  },
+                  {
+                    field: "utm_source",
+                    value:
+                      document.querySelector('input[name="field[24]"]')
+                        ?.value || "",
+                  },
+                  {
+                    field: "utm_content",
+                    value:
+                      document.querySelector('input[name="field[26]"]')
+                        ?.value || "",
+                  },
+                  {
+                    field: "utm_term",
+                    value:
+                      document.querySelector('input[name="field[27]"]')
+                        ?.value || "",
+                  },
+                  {
+                    field: "paginaCaptura",
+                    value:
+                      document.querySelector('input[name="field[29]"]')
+                        ?.value || "",
+                  },
+                ],
+              },
             };
 
             const responseMessage = document.getElementById("responseMessage");
@@ -66,7 +101,7 @@
               });
 
               if (response.ok) {
-              
+                window.location.href = "/thanks.html";
                 responseMessage.textContent =
                   "✅ Inscrição realizada com sucesso!";
                 responseMessage.classList.add("text-green-600");
