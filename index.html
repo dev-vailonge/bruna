@@ -48,6 +48,12 @@
               email: document.getElementById("email").value,
               firstName: document.getElementById("name").value,
               phone: document.getElementById("phone").value,
+              utm_campaign: document.getElementById("utm_campaign").value,
+              utm_medium: document.getElementById("utm_medium").value,
+              utm_source: document.getElementById("utm_source").value,
+              utm_content: document.getElementById("utm_content").value,
+              utm_term: document.getElementById("utm_term").value,
+              paginaCaptura: document.getElementById("paginaCaptura").value,
             };
 
             const responseMessage = document.getElementById("responseMessage");
@@ -60,7 +66,7 @@
               });
 
               if (response.ok) {
-               
+              
                 responseMessage.textContent =
                   "✅ Inscrição realizada com sucesso!";
                 responseMessage.classList.add("text-green-600");
