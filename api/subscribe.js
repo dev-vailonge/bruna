@@ -22,16 +22,11 @@ export default async function handler(req, res) {
                     firstName,
                     phone,
                     listid: ACTIVE_CAMPAIGN_LIST_ID,
-
-                    // ✅ Adding UTM fields
-                    fieldValues: [
-                        { field: "utm_campaign", value: utm_campaign },
-                        { field: "utm_medium", value: utm_medium },
-                        { field: "utm_source", value: utm_source },
-                        { field: "utm_content", value: utm_content },
-                        { field: "utm_term", value: utm_term },
-                        { field: "paginaCaptura", value: paginaCaptura }
-                    ]
+                    utm_campaign,
+                    utm_medium,
+                    utm_source,
+                    utm_content,
+                    utm_term,
                 }
             })
         });
