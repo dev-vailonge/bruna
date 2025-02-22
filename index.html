@@ -45,27 +45,22 @@
             e.preventDefault();
 
             const formData = {
-              contact: {
-                email: document.getElementById("email").value,
-                firstName: document.getElementById("name").value,
-                phone: document.getElementById("phone").value,
-                listid: "Leads",
-                utm_campaign:
-                  document.querySelector('input[name="field[23]"]')?.value ||
-                  "",
-                utm_medium:
-                  document.querySelector('input[name="field[25]"]')?.value ||
-                  "",
-                utm_source:
-                  document.querySelector('input[name="field[24]"]')?.value ||
-                  "",
-                utm_content:
-                  document.querySelector('input[name="field[26]"]')?.value ||
-                  "",
-                utm_term:
-                  document.querySelector('input[name="field[27]"]')?.value ||
-                  "",
-              },
+              email: document.getElementById("email").value,
+              firstName: document.getElementById("name").value,
+              phone: document.getElementById("phone").value,
+              listid: "Leads",
+              utm_campaign:
+                document.querySelector('input[name="field[23]"]')?.value || "",
+              utm_medium:
+                document.querySelector('input[name="field[25]"]')?.value || "",
+              utm_source:
+                document.querySelector('input[name="field[24]"]')?.value || "",
+              utm_content:
+                document.querySelector('input[name="field[26]"]')?.value || "",
+              utm_term:
+                document.querySelector('input[name="field[27]"]')?.value || "",
+              pagina_captura:
+                document.querySelector('input[name="field[29]"]')?.value || "",
             };
 
             console.log("🔥 Data being sent to backend:", formData); // 🔥 Debugging log
