@@ -49,7 +49,7 @@
                 email: document.getElementById("email").value,
                 firstName: document.getElementById("name").value,
                 phone: document.getElementById("phone").value,
-                listid: "Leads", 
+                listid: "Leads",
                 fieldValues: [
                   {
                     field: "utm_campaign",
@@ -91,7 +91,7 @@
               },
             };
 
-            const responseMessage = document.getElementById("responseMessage");
+            console.log("🔥 Data being sent to backend:", formData); // 🔥 Debugging log
 
             try {
               const response = await fetch("/api/subscribe", {
@@ -102,16 +102,14 @@
 
               if (response.ok) {
                 window.location.href = "/thanks.html";
-                responseMessage.textContent =
-                  "✅ Inscrição realizada com sucesso!";
-                responseMessage.classList.add("text-green-600");
               } else {
-                responseMessage.textContent = "❌ Erro ao enviar o formulário.";
-                responseMessage.classList.add("text-red-600");
+                console.error(
+                  "❌ Backend responded with an error",
+                  await response.json()
+                );
               }
             } catch (error) {
-              responseMessage.textContent = "❌ Erro ao conectar ao servidor.";
-              responseMessage.classList.add("text-red-600");
+              console.error("❌ Error submitting the form:", error);
             }
           });
       });
