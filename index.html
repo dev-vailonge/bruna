@@ -100,16 +100,31 @@
                 body: JSON.stringify(formData),
               });
 
+              const responseData = await response.json();
+              console.log("🔥 Backend response:", responseData); // 🔥 Debugging log
+
               if (response.ok) {
                 window.location.href = "/thanks.html";
               } else {
                 console.error(
-                  "❌ Backend responded with an error",
-                  await response.json()
+                  "❌ Backend responded with an error:",
+                  responseData.error,
+                  "\nFull response:",
+                  responseData
                 );
+                alert(
+                  "Erro ao enviar o formulário. Por favor, tente novamente."
+                ); // User feedback
               }
             } catch (error) {
-              console.error("❌ Error submitting the form:", error);
+              console.error(
+                "❌ Error submitting the form:",
+                error.message,
+                error
+              );
+              alert(
+                "Erro de conexão. Por favor, verifique sua internet e tente novamente."
+              ); // User feedback
             }
           });
       });
