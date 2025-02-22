@@ -94,22 +94,30 @@
             const responseMessage = document.getElementById("responseMessage");
 
             try {
-              const response = await fetch("/api/subscribe", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-              });
+              const response = await fetch(
+                "https://youraccount.api-us1.com/api/3/contacts",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    "Api-Token": "YOUR_API_KEY", // Replace with your ActiveCampaign API key
+                  },
+                  body: JSON.stringify(formData),
+                }
+              );
 
-              if (response.ok) {
-                window.location.href = "/thanks.html";
-                responseMessage.textContent =
-                  "✅ Inscrição realizada com sucesso!";
-                responseMessage.classList.add("text-green-600");
+              const data = await response.json();
+
+              if (response.ok && !data.error) {
+                
               } else {
-                responseMessage.textContent = "❌ Erro ao enviar o formulário.";
+                responseMessage.textContent =
+                  data.error || "❌ Erro ao enviar o formulário.";
                 responseMessage.classList.add("text-red-600");
+                console.error("Form submission error:", data);
               }
             } catch (error) {
+              console.error("API error:", error);
               responseMessage.textContent = "❌ Erro ao conectar ao servidor.";
               responseMessage.classList.add("text-red-600");
             }
